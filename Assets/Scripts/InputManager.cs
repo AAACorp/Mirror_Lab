@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class InputManager : MonoBehaviour
     private Vector3 _movementVector = new Vector3();
 
     [SerializeField]
+    private InputField _inputField;
+
+    [SerializeField]
     private Player _playerObj;
 
     private void Awake()
@@ -35,6 +39,16 @@ public class InputManager : MonoBehaviour
     public void SetPlayer(Player _pl)
     {
         _playerObj = _pl;
+    }
+
+    public void SpawnPlayer()
+    {
+        PlayerManager.Instance.SpawnPlayer();
+    }
+
+    public void SendName(string name)
+    {
+        PlayerManager.Instance.SetPlayerName(_inputField.text);
     }
 
     #region Movement Function
