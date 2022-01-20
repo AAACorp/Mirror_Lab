@@ -23,6 +23,9 @@ public class InputManager : MonoBehaviour
     private InputField _inputField;
 
     [SerializeField]
+    private Dropdown _dropdown;
+
+    [SerializeField]
     private Player _playerObj;
 
     private void Awake()
@@ -49,6 +52,11 @@ public class InputManager : MonoBehaviour
     public void SendName(string name)
     {
         PlayerManager.Instance.SetPlayerName(_inputField.text);
+    }
+
+    public void SendColor(int id)
+    {
+        PlayerManager.Instance.SetPlayerColor(_dropdown.value);
     }
 
     #region Movement Function

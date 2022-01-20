@@ -18,24 +18,24 @@ public class Player : NetworkBehaviour
     private Text _nameText;
 
     private Rigidbody _rb;
+    private Renderer _renderer;
 
     private void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
+        _renderer = this.GetComponent<Renderer>();
 
         if (isServer)
         {
             _speed = 3f;
             CmdSetPlayerName(PlayerManager.Instance.GetPlayerName);
+            CmdSetPlayerColor(PlayerManager.Instance.GetPlayerColor);
         }
-
-        _rb = this.GetComponent<Rigidbody>();
 
         if(isClient && isLocalPlayer)
         {
             SetInputManagerPlayer();
-        }
-       
+        }     
     }
 
     private void SetInputManagerPlayer()
@@ -54,6 +54,12 @@ public class Player : NetworkBehaviour
     {
         _playerName = plName;
         RpcSetVisibleName(_playerName);
+    }
+
+    [Command]
+    public void CmdSetPlayerColor(Color color)
+    {
+        _renderer.material.color = color;
     }
 
     [ClientRpc]

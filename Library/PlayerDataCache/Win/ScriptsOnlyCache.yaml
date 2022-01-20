@@ -492,7 +492,7 @@ ScriptsOnlyBuild:
     className: LatencySimulation
   - hash:
       serializedVersion: 2
-      Hash: 34a0aa9869161f31d29463c24d0b0d6f
+      Hash: e78a2bd4c901be9089fc428584a85887
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -1008,7 +1008,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 319bbb1bef95488faee6cf57199c2f33
+      Hash: 75d35c184a08ee1b24d69092800ea287
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player

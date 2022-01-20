@@ -20,11 +20,22 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private string _playerName;
 
+    [SerializeField]
+    private Color _playerColor;
+
     public string GetPlayerName
     {
         get
         {
             return _playerName;
+        }
+    }
+
+    public Color GetPlayerColor
+    {
+        get
+        {
+            return _playerColor;
         }
     }
 
@@ -38,6 +49,23 @@ public class PlayerManager : MonoBehaviour
     public void SetPlayerName(string plName)
     {
         _playerName = plName;
+    }
+
+    public void SetPlayerColor(int colorId)
+    {
+        switch (colorId)
+        {
+            case 0:
+                _playerColor = Color.green;
+                break;
+            case 1:
+                _playerColor = Color.red;
+                break;
+            case 2:
+                _playerColor = Color.yellow;
+                break;
+        }
+        Debug.Log("Player color is " + _playerColor);
     }
 
     public void SpawnPlayer()
@@ -57,6 +85,10 @@ public class PlayerManager : MonoBehaviour
             UIManager.Instance.SpawnGroupToggle();
             UIManager.Instance.PlayerStatsGroupToggle();
             UIManager.Instance.SetUIPlayerName(_playerName);
+            if(GetPlayerColor == Color.clear)
+            {
+                _playerColor = Color.green;
+            }
         }
     }
 }

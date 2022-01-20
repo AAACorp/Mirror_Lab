@@ -5,9 +5,11 @@ using Mirror;
 
 public class CustomNetworkManager : NetworkManager
 {
+    
     public override void OnClientConnect(NetworkConnection conn)
     {
         UIManager.Instance.SpawnGroupToggle();
+        Debug.Log("Player Color is " + PlayerManager.Instance.GetPlayerColor);
     }
 
     public override void OnClientDisconnect(NetworkConnection conn)
