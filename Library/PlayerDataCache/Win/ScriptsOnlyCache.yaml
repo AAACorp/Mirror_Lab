@@ -1,10 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Coin
     - CustomNetworkManager
     - InputManager
     - Player
     - PlayerManager
+    - SpawnManager
     - UIManager
     Mirror.Components.dll:
     - Mirror.Experimental.NetworkRigidbody
@@ -31,10 +33,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -68,46 +75,62 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 11174}
+      Script: {instanceID: 12126}
     - Class: 114
-      Script: {instanceID: 11252}
+      Script: {instanceID: 12258}
     - Class: 114
-      Script: {instanceID: 11384}
+      Script: {instanceID: 12274}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 12276}
     - Class: 114
-      Script: {instanceID: 11778}
+      Script: {instanceID: 12320}
     - Class: 114
-      Script: {instanceID: 11926}
+      Script: {instanceID: 12656}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 12804}
     - Class: 114
-      Script: {instanceID: 12428}
+      Script: {instanceID: 12948}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 13016}
     - Class: 114
-      Script: {instanceID: 12870}
+      Script: {instanceID: 13042}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 13304}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 13390}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13542}
     - Class: 114
-      Script: {instanceID: 13284}
+      Script: {instanceID: 13748}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 13896}
     - Class: 114
-      Script: {instanceID: 13564}
+      Script: {instanceID: 13918}
     - Class: 114
-      Script: {instanceID: 13610}
+      Script: {instanceID: 13960}
+    - Class: 114
+      Script: {instanceID: 13980}
+    - Class: 114
+      Script: {instanceID: 14158}
+    - Class: 114
+      Script: {instanceID: 14374}
+    - Class: 114
+      Script: {instanceID: 14396}
+    - Class: 114
+      Script: {instanceID: 14414}
+    - Class: 114
+      Script: {instanceID: 14438}
+    - Class: 114
+      Script: {instanceID: 14484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -124,24 +147,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: caa533b001ae39b864ba8425019e2268
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Outline
-  - hash:
-      serializedVersion: 2
-      Hash: 7ab0e790220bdca831fdd886b339039d
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GridLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: aeb62f729c52c814dec86c47dcac1471
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: 8617aadb248da95f2695ca5669494400
@@ -258,6 +263,12 @@ ScriptsOnlyBuild:
     className: PhysicsCollision
   - hash:
       serializedVersion: 2
+      Hash: aeb62f729c52c814dec86c47dcac1471
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -298,6 +309,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 7ab0e790220bdca831fdd886b339039d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GridLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 37c782056623a482d772a08897449977
@@ -384,7 +401,7 @@ ScriptsOnlyBuild:
     className: PlayerGUI
   - hash:
       serializedVersion: 2
-      Hash: 93f32c947a99574e021063ad424f9361
+      Hash: 33c2e45b83236aa27c9c88cabda102ea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerManager
@@ -606,6 +623,12 @@ ScriptsOnlyBuild:
     className: RandomColor
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Coin
+  - hash:
+      serializedVersion: 2
       Hash: b26c6f4c6312e2952bbe7d0df1ea026e
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
@@ -744,7 +767,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 8b605bff8dd8eb1a5a5d0b1b79522650
+      Hash: 60f17df6280f98c6295cd1dd37a51620
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InputManager
@@ -826,6 +849,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Basic
     className: PlayerUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnManager
   - hash:
       serializedVersion: 2
       Hash: fa657c3ec40e8c152d1d7938b1a10cd9
@@ -928,6 +957,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
     className: NetworkTransformChild
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Outline
   - hash:
       serializedVersion: 2
       Hash: 1e0c784ff68e6df57d641ad43622504f
@@ -1045,4 +1080,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity Projects/Mirror_Lab/Builds/Mirror_Lab.exe
+  playerPath: D:/Work/PI41/Mirror_Lab/Builds/Mirror_Lab.exe
